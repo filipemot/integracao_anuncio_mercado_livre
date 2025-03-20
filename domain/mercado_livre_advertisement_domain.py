@@ -25,10 +25,58 @@ class MercadoLivreAdvertisementDomain:
         ]
         self.sale_terms = []
 
-        self.add_sales_term()
+        self.__add_sales_term()
         self.attributes = []
+        self.__add_attributes(grid_id)
+        self.variations = []
 
-    def add_sales_term(self):
+    def __add_variations(self, color: str, color_id: str, price: float, size: str,
+                         size_id: str, grid_id: str, pictures: []):
+        self.variations.append({
+            "price": price,
+            "attribute_combinations": [
+                {
+                    "id": "COLOR",
+                    "name": "Cor",
+                    "value_id": color_id,
+                    "value_name": color,
+                    "values": [
+                        {
+                            "id": color_id,
+                            "name": color,
+                            "struct": None
+                        }
+                    ],
+                    "value_type": "string"
+                },
+                {
+                    "id": "SIZE",
+                    "name": "Tamanho",
+                    "value_id": size_id,
+                    "value_name": size,
+                    "values": [
+                        {
+                            "id": size_id,
+                            "name": size,
+                            "struct": None
+                        }
+                    ],
+                    "value_type": "string"
+                }
+            ],
+            "available_quantity": 10,
+            "sold_quantity": 0,
+            "sale_terms": [],
+            "picture_ids": pictures,
+            "attributes": [
+               {
+                   "id": "SIZE_GRID_ROW_ID",
+                   "value_name": f"{grid_id}:1"
+               }
+            ]
+        })
+
+    def __add_sales_term(self):
         self.sale_terms.append({
             "id": "MANUFACTURING_TIME",
             "name": "Disponibilidade de estoque",
@@ -89,7 +137,7 @@ class MercadoLivreAdvertisementDomain:
             "value_type": "number_unit"
         })
 
-    def add_attributes(self, grid_id):
+    def __add_attributes(self, grid_id):
         self.attributes.append({
             "id": "GENDER",
             "name": "Gênero",
@@ -224,5 +272,107 @@ class MercadoLivreAdvertisementDomain:
             "value_type": "grid_id"
         })
 
+        self.attributes.append({
+            "id": "SLEEVE_TYPE",
+            "name": "Tipo de manga",
+            "value_id": "466804",
+            "value_name": "Curta",
+            "values": [
+                {
+                    "id": "466804",
+                    "name": "Curta",
+                    "struct": None
+                }
+            ],
+            "value_type": "list"
+        })
 
+        self.attributes.append({
+            "id": "T_SHIRT_COLLAR_TYPE",
+            "name": "Tipo de gola",
+            "value_id": "466787",
+            "value_name": "Redonda",
+            "values": [
+                {
+                    "id": "466787",
+                    "name": "Redonda",
+                    "struct": None
+                }
+            ],
+            "value_type": "list"
+        })
 
+        self.attributes.append({
+            "id": "WEDGE_SHAPE",
+            "name": "Forma de caimento",
+            "value_id": "-1",
+            "value_name": None,
+            "values": [
+                {
+                    "id": "-1",
+                    "name": None,
+                    "struct": None
+                }
+            ],
+            "value_type": "list"
+        })
+
+        self.attributes.append({
+            "id": "WITH_RECYCLED_MATERIALS",
+            "name": "Com materiais reciclados",
+            "value_id": "-1",
+            "value_name": None,
+            "values": [
+                {
+                    "id": "-1",
+                    "name": None,
+                    "struct": None
+                }
+            ],
+            "value_type": "boolean"
+        })
+
+        self.attributes.append({
+            "id": "EMPTY_GTIN_REASON",
+            "name": "EMPTY_GTIN_REASON",
+            "value_id": "17055161",
+            "value_name": "Outro motivo",
+            "values": [
+                {
+                    "id": "17055161",
+                    "name": "Outro motivo",
+                    "struct": None
+                }
+            ],
+            "value_type": "string"
+        })
+
+        self.attributes.append({
+            "id": "GARMENT_TYPE",
+            "name": "Tipo de roupa",
+            "value_id": "12038970",
+            "value_name": "Camiseta",
+            "values": [
+                {
+                    "id": "12038970",
+                    "name": "Camiseta",
+                    "struct": None
+                }
+            ],
+            "value_type": "list"
+        })
+
+        self.attributes.append({
+            "id": "BRAND",
+            "name": "Marca",
+            "value_id": "276243",
+            "value_name": "Genérica",
+            "values": [
+                {
+                    "id": "276243",
+                    "name": "Genérica",
+                    "struct": None
+                }
+            ],
+            "value_type": "string"
+        })

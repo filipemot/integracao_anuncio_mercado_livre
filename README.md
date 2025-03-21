@@ -39,15 +39,15 @@ def main():
     mercado_livre_services = MercadoLivreServices(config_services.mercado_livre_api_url, config_services.token)  
     variations = [add_variation_yellow()]  
     mercado_livre_advertisement_domain = MercadoLivreAdvertisementDomain("Titulo", config_services.mercado_livre_api_category_id,  
-                                                                         'Preco',  
-                                                                         'Quantidade',  
+                                                                         0, # Preço 
+                                                                         0, # Quantidade  
                                                                          "Garantia",  
                                                                          config_services.mercado_livre_api_domain,  
                                                                          config_services.mercado_livre_api_grid_id,  
                                                                          variations,  
                                                                          config_services.mercado_livre_api_site_id,  
                                                                          config_services.mercado_livre_api_currency,  
-                                                                         ["Descrição"],  
+                                                                         "Descrição",  
                                                                          mercado_livre_services)  
     result = mercado_livre_services.save_advertisement(mercado_livre_advertisement_domain)  
   
@@ -63,5 +63,8 @@ def add_variation_yellow():
                 PicturesDomain("C:\\Users\\filip\\Downloads\\camisetasml\\amarelo_3.png", "amarelo_3.png")]  
   
     return VariationsDomain(config_services.mercado_livre_api_site_id, "Amarelo", "Codigo da Cor",  
-                            'Quantidade', "Tamanho", config_services.mercado_livre_api_grid_id, pictures)
+                            0, # Quantidade 
+                            "Tamanho", 
+                            config_services.mercado_livre_api_grid_id, 
+                            pictures)
 ```

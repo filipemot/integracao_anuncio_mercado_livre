@@ -1,24 +1,30 @@
+from domain.pictures_domain import PicturesDomain
+from domain.variations_domain import VariationsDomain
+from services.mercado_livre_services import MercadoLivreServices
+
+
 class MercadoLivreAdvertisementDomain:
 
     def __init__(self, title: str, category_id: str, price: float, available_quantity: int, warranty: str,
-                 domain: str, grid_id: str):
-        self.site_id: None
-        self.title: title
+                 domain: str, grid_id: str, variations: [VariationsDomain], site_id: str, currency_id: str,
+                 descriptions: [str], mercado_livre_services: MercadoLivreServices):
+        self.site_id = site_id
+        self.title = title
         self.family_name: None
         self.category_id = category_id
-        self.official_store_id = None,
+        self.official_store_id = None
         self.price = price
-        self.currency_id = "BRL"
+        self.currency_id = currency_id
         self.available_quantity = available_quantity
-        self.buying_mode = "buy_it_now",
-        self.listing_type_id = "gold_special",
+        self.buying_mode = "buy_it_now"
+        self.listing_type_id = "gold_special"
         self.condition = "new"
         self.warranty = warranty
         self.catalog_product_id = None
-        self.domain_id = domain,
+        self.domain_id = domain
         self.seller_custom_field = None
-        self.automatic_relist = False,
-        self.catalog_listing = False,
+        self.automatic_relist = False
+        self.catalog_listing = False
 
         self.channels = [
             "marketplace"
@@ -27,8 +33,27 @@ class MercadoLivreAdvertisementDomain:
 
         self.__add_sales_term()
         self.attributes = []
+        self.grid_id = grid_id
         self.__add_attributes(grid_id)
+        self.variations = variations
+        self.mercado_livre_services = mercado_livre_services
+        self.descriptions = descriptions
+        self.add_variations(variations)
+
+    def add_variations(self, variations: [VariationsDomain]):
         self.variations = []
+        for variation in variations:
+            pictures = self.__add_pictures(variation.pictures)
+            self.__add_variations(variation.color, variation.color_id, variation.price, variation.size,
+                                  variation.size_id, self.grid_id, pictures)
+
+    def __add_pictures(self, pictures: [PicturesDomain]):
+        pictures_ids = []
+        for picture in pictures:
+            picture_id = self.mercado_livre_services.save_pictures(picture.name, picture.path, "image/*")
+            if picture_id:
+                pictures_ids.append(picture_id)
+        return pictures_ids
 
     def __add_variations(self, color: str, color_id: str, price: float, size: str,
                          size_id: str, grid_id: str, pictures: []):
@@ -69,10 +94,10 @@ class MercadoLivreAdvertisementDomain:
             "sale_terms": [],
             "picture_ids": pictures,
             "attributes": [
-               {
-                   "id": "SIZE_GRID_ROW_ID",
-                   "value_name": f"{grid_id}:1"
-               }
+                {
+                    "id": "SIZE_GRID_ROW_ID",
+                    "value_name": f"{grid_id}:1"
+                }
             ]
         })
 
@@ -376,3 +401,30 @@ class MercadoLivreAdvertisementDomain:
             ],
             "value_type": "string"
         })
+
+    def to_json(self):
+        return {
+            "site_id": self.site_id,
+            "title": self.title,
+            "family_name": None,
+            "category_id": self.category_id,
+            "user_product_id": None,
+            "official_store_id": self.official_store_id,
+            "price": self.price,
+            "currency_id": self.currency_id,
+            "available_quantity": self.available_quantity,
+            "sale_terms": self.sale_terms,
+            "buying_mode": self.buying_mode,
+            "listing_type_id": self.listing_type_id,
+            "condition": self.condition,
+            "attributes": self.attributes,
+            "variations": self.variations,
+            "warranty": self.warranty,
+            "catalog_product_id": self.catalog_product_id,
+            "domain_id": self.domain_id,
+            "seller_custom_field": self.seller_custom_field,
+            "automatic_relist": self.automatic_relist,
+            "catalog_listing": self.catalog_listing,
+            "channels": self.channels,
+            "descriptions": self.descriptions
+        }

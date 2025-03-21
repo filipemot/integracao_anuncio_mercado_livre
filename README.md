@@ -27,6 +27,14 @@ python.exe -m pip install --ignore-installed -r requeriments.txt
 Base dos códigos utilizados pelo mercado livre para a listagem de id's. Utilize o arquivo  base_categories_mercado_livre.json
 
 ```python
+from domain.mercado_livre_advertisement_domain import MercadoLivreAdvertisementDomain
+from domain.pictures_domain import PicturesDomain
+from domain.variations_domain import VariationsDomain
+from services.config_services import ConfigServices
+from services.mercado_livre_services import MercadoLivreServices
+
+config_services = ConfigServices()
+
 def main():  
     mercado_livre_services = MercadoLivreServices(config_services.mercado_livre_api_url, config_services.token)  
     variations = [add_variation_yellow()]  

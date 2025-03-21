@@ -3,11 +3,26 @@
 Cadastro Anúncios de Camisetas noMercado Livre usando a API
 
 # Versão do Python
+
 ```bash
 Python 3.9
 ```
 
+# Collection do Postman para Testes
+
+```bash
+/postman/Integração - Mercado Livre.postman_collection.json
+```
+
+# Links Documentação da API
+- https://developers.mercadolivre.com.br/pt_br/publicacao-de-produtos
+- https://developers.mercadolivre.com.br/pt_br/atributos
+- https://developers.mercadolivre.com.br/pt_br/validacoes
+- https://developers.mercadolivre.com.br/pt_br/trabalhar-com-imagens
+- https://developers.mercadolivre.com.br/pt_br/autenticacao-e-autorizacao
+
 # Atualizar Dependências
+
 ```bash
 python.exe -m pip install --ignore-installed -r requeriments.txt
 ```

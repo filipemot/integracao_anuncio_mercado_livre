@@ -1,0 +1,832 @@
+{
+	"info": {
+		"_postman_id": "74cd5e4f-6691-468b-9107-46033062b87b",
+		"name": "Integração - Mercado Livre",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "442978"
+	},
+	"item": [
+		{
+			"name": "Items",
+			"item": [
+				{
+					"name": "Get Item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "APP_USR-4938054066138304-031916-551970d98869d743227d28b74c9dfaa0-2154158171",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.mercadolibre.com/items/MLB5315447516",
+							"protocol": "https",
+							"host": [
+								"api",
+								"mercadolibre",
+								"com"
+							],
+							"path": [
+								"items",
+								"MLB5315447516"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "APP_USR-4938054066138304-032109-449b46d1bd86671ccfd216d4008fb87d-2154158171",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"site_id\": \"MLB\",\r\n    \"description\": \"Publicação de teste, não comprar\",\r\n    \"title\": \"Camiseta Teste\",\r\n    \"family_name\": null,\r\n    \"category_id\": \"MLB31447\",\r\n    \"official_store_id\": null,\r\n    \"price\": 50,\r\n    \"currency_id\": \"BRL\",\r\n    \"available_quantity\": 50,\r\n    \"sale_terms\": [\r\n        {\r\n            \"id\": \"MANUFACTURING_TIME\",\r\n            \"name\": \"Disponibilidade de estoque\",\r\n            \"value_id\": null,\r\n            \"value_name\": \"5 dias\",\r\n            \"value_struct\": {\r\n                \"number\": 5,\r\n                \"unit\": \"dias\"\r\n            },\r\n            \"values\": [\r\n                {\r\n                    \"id\": null,\r\n                    \"name\": \"5 dias\",\r\n                    \"struct\": {\r\n                        \"number\": 5,\r\n                        \"unit\": \"dias\"\r\n                    }\r\n                }\r\n            ],\r\n            \"value_type\": \"number_unit\"\r\n        },\r\n        {\r\n            \"id\": \"WARRANTY_TYPE\",\r\n            \"name\": \"Tipo de garantia\",\r\n            \"value_id\": \"2230280\",\r\n            \"value_name\": \"Garantia do vendedor\",\r\n            \"value_struct\": null,\r\n            \"values\": [\r\n                {\r\n                    \"id\": \"2230280\",\r\n                    \"name\": \"Garantia do vendedor\",\r\n                    \"struct\": null\r\n                }\r\n            ],\r\n            \"value_type\": \"list\"\r\n        },\r\n        {\r\n            \"id\": \"WARRANTY_TIME\",\r\n            \"name\": \"Tempo de garantia\",\r\n            \"value_id\": null,\r\n            \"value_name\": \"30 dias\",\r\n            \"value_struct\": {\r\n                \"number\": 30,\r\n                \"unit\": \"dias\"\r\n            },\r\n            \"values\": [\r\n                {\r\n                    \"id\": null,\r\n                    \"name\": \"30 dias\",\r\n                    \"struct\": {\r\n                        \"number\": 30,\r\n                        \"unit\": \"dias\"\r\n                    }\r\n                }\r\n            ],\r\n            \"value_type\": \"number_unit\"\r\n        }\r\n    ],\r\n    \"buying_mode\": \"buy_it_now\",\r\n    \"listing_type_id\": \"gold_special\",\r\n    \"condition\": \"new\",\r\n    \"attributes\": [\r\n        {\r\n            \"id\": \"GENDER\",\r\n            \"name\": \"Gênero\",\r\n            \"value_id\": \"110461\",\r\n            \"value_name\": \"Sem gênero\",\r\n            \"values\": [\r\n                {\r\n                    \"id\": \"110461\",\r\n                    \"name\": \"Sem gênero\",\r\n                    \"struct\": null\r\n                }\r\n            ],\r\n            \"value_type\": \"list\"\r\n        },\r\n        {\r\n            \"id\": \"IS_SPORTIVE\",\r\n            \"name\": \"É esportiva\",\r\n            \"value_id\": \"242084\",\r\n            \"value_name\": \"Não\",\r\n            \"values\": [\r\n                {\r\n                    \"id\": \"242084\",\r\n                    \"name\": \"Não\",\r\n                    \"struct\": null\r\n                }\r\n            ],\r\n            \"value_type\": \"boolean\"\r\n        },\r\n        {\r\n            \"id\": \"IS_SUITABLE_FOR_PREGNACY\",\r\n            \"name\": \"É apta para gestação\",\r\n            \"value_id\": \"242084\",\r\n            \"value_name\": \"Não\",\r\n            \"values\": [\r\n                {\r\n                    \"id\": \"242084\",\r\n                    \"name\": \"Não\",\r\n                    \"struct\": null\r\n                }\r\n            ],\r\n            \"value_type\": \"boolean\"\r\n        },\r\n        {\r\n            \"id\": \"ITEM_CONDITION\",\r\n            \"name\": \"Condição do item\",\r\n            \"value_id\": \"2230284\",\r\n            \"value_name\": \"Novo\",\r\n            \"values\": [\r\n                {\r\n                    \"id\": \"2230284\",\r\n                    \"name\": \"Novo\",\r\n                    \"struct\": null\r\n                }\r\n            ],\r\n            \"value_type\": \"list\"\r\n        },\r\n        {\r\n            \"id\": \"MAIN_MATERIAL\",\r\n            \"name\": \"Material principal\",\r\n            \"value_id\": \"466793\",\r\n            \"value_name\": \"Algodão\",\r\n            \"values\": [\r\n                {\r\n                    \"id\": \"466793\",\r\n                    \"name\": \"Algodão\",\r\n                    \"struct\": null\r\n                }\r\n            ],\r\n            \"value_type\": \"string\"\r\n        },\r\n        {\r\n            \"id\": \"MODEL\",\r\n            \"name\": \"Modelo\",\r\n            \"value_id\": null,\r\n            \"value_name\": \"Generica\",\r\n            \"values\": [\r\n                {\r\n                    \"id\": null,\r\n                    \"name\": \"Generica\",\r\n                    \"struct\": null\r\n                }\r\n            ],\r\n            \"value_type\": \"string\"\r\n        },\r\n        {\r\n            \"id\": \"RECOMMENDED_USES\",\r\n            \"name\": \"Usos recomendados\",\r\n            \"value_id\": \"-1\",\r\n            \"value_name\": null,\r\n            \"values\": [\r\n                {\r\n                    \"id\": \"-1\",\r\n                    \"name\": null,\r\n                    \"struct\": null\r\n                }\r\n            ],\r\n            \"value_type\": \"string\"\r\n        },\r\n        {\r\n            \"id\": \"SALE_FORMAT\",\r\n            \"name\": \"Formato de venda\",\r\n            \"value_id\": \"1359391\",\r\n            \"value_name\": \"Unidade\",\r\n            \"values\": [\r\n                {\r\n                    \"id\": \"1359391\",\r\n                    \"name\": \"Unidade\",\r\n                    \"struct\": null\r\n                }\r\n            ],\r\n            \"value_type\": \"list\"\r\n        },\r\n        {\r\n            \"id\": \"SIZE_GRID_ID\",\r\n            \"name\": \"ID da guia de tamanhos\",\r\n            \"value_id\": null,\r\n            \"value_name\": \"2948867\",\r\n            \"values\": [\r\n                {\r\n                    \"id\": null,\r\n                    \"name\": \"2948867\",\r\n                    \"struct\": null\r\n                }\r\n            ],\r\n            \"value_type\": \"grid_id\"\r\n        },\r\n        {\r\n            \"id\": \"SLEEVE_TYPE\",\r\n            \"name\": \"Tipo de manga\",\r\n            \"value_id\": \"466804\",\r\n            \"value_name\": \"Curta\",\r\n            \"values\": [\r\n                {\r\n                    \"id\": \"466804\",\r\n                    \"name\": \"Curta\",\r\n                    \"struct\": null\r\n                }\r\n            ],\r\n            \"value_type\": \"list\"\r\n        },\r\n        {\r\n            \"id\": \"T_SHIRT_COLLAR_TYPE\",\r\n            \"name\": \"Tipo de gola\",\r\n            \"value_id\": \"466787\",\r\n            \"value_name\": \"Redonda\",\r\n            \"values\": [\r\n                {\r\n                    \"id\": \"466787\",\r\n                    \"name\": \"Redonda\",\r\n                    \"struct\": null\r\n                }\r\n            ],\r\n            \"value_type\": \"list\"\r\n        },\r\n        {\r\n            \"id\": \"WEDGE_SHAPE\",\r\n            \"name\": \"Forma de caimento\",\r\n            \"value_id\": \"-1\",\r\n            \"value_name\": null,\r\n            \"values\": [\r\n                {\r\n                    \"id\": \"-1\",\r\n                    \"name\": null,\r\n                    \"struct\": null\r\n                }\r\n            ],\r\n            \"value_type\": \"list\"\r\n        },\r\n        {\r\n            \"id\": \"WITH_RECYCLED_MATERIALS\",\r\n            \"name\": \"Com materiais reciclados\",\r\n            \"value_id\": \"-1\",\r\n            \"value_name\": null,\r\n            \"values\": [\r\n                {\r\n                    \"id\": \"-1\",\r\n                    \"name\": null,\r\n                    \"struct\": null\r\n                }\r\n            ],\r\n            \"value_type\": \"boolean\"\r\n        },\r\n        {\r\n            \"id\": \"EMPTY_GTIN_REASON\",\r\n            \"name\": \"EMPTY_GTIN_REASON\",\r\n            \"value_id\": \"17055161\",\r\n            \"value_name\": \"Outro motivo\",\r\n            \"values\": [\r\n                {\r\n                    \"id\": \"17055161\",\r\n                    \"name\": \"Outro motivo\",\r\n                    \"struct\": null\r\n                }\r\n            ],\r\n            \"value_type\": \"string\"\r\n        },\r\n        {\r\n            \"id\": \"GARMENT_TYPE\",\r\n            \"name\": \"Tipo de roupa\",\r\n            \"value_id\": \"12038970\",\r\n            \"value_name\": \"Camiseta\",\r\n            \"values\": [\r\n                {\r\n                    \"id\": \"12038970\",\r\n                    \"name\": \"Camiseta\",\r\n                    \"struct\": null\r\n                }\r\n            ],\r\n            \"value_type\": \"list\"\r\n        },\r\n        {\r\n            \"id\": \"BRAND\",\r\n            \"name\": \"Marca\",\r\n            \"value_id\": \"276243\",\r\n            \"value_name\": \"Genérica\",\r\n            \"values\": [\r\n                {\r\n                    \"id\": \"276243\",\r\n                    \"name\": \"Genérica\",\r\n                    \"struct\": null\r\n                }\r\n            ],\r\n            \"value_type\": \"string\"\r\n        }\r\n    ],\r\n    \"variations\": [\r\n        {\r\n            \"price\": 100,\r\n            \"attribute_combinations\": [\r\n                {\r\n                    \"id\": \"COLOR\",\r\n                    \"name\": \"Cor\",\r\n                    \"value_id\": \"52007\",\r\n                    \"value_name\": \"Amarelo\",\r\n                    \"values\": [\r\n                        {\r\n                            \"id\": \"52007\",\r\n                            \"name\": \"Amarelo\",\r\n                            \"struct\": null\r\n                        }\r\n                    ],\r\n                    \"value_type\": \"string\"\r\n                },\r\n                {\r\n                    \"id\": \"SIZE\",\r\n                    \"name\": \"Tamanho\",\r\n                    \"value_id\": \"2948867\",\r\n                    \"value_name\": \"38\",\r\n                    \"values\": [\r\n                        {\r\n                            \"id\": \"2948867\",\r\n                            \"name\": \"38\",\r\n                            \"struct\": null\r\n                        }\r\n                    ],\r\n                    \"value_type\": \"string\"\r\n                }\r\n            ],\r\n            \"available_quantity\": 10,\r\n            \"sold_quantity\": 0,\r\n            \"sale_terms\": [],\r\n            \"picture_ids\": [\r\n                \"864464-MLB83228384151_032025\",\r\n                \"809255-MLB83228493829_032025\",\r\n                \"705563-MLB82939964916_032025\"\r\n            ],\r\n            \"attributes\": [\r\n                {\r\n                    \"id\": \"SIZE_GRID_ROW_ID\",\r\n                    \"value_name\": \"2948867:1\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"price\": 100,\r\n            \"attribute_combinations\": [\r\n                {\r\n                    \"id\": \"COLOR\",\r\n                    \"name\": \"Cor\",\r\n                    \"value_id\": \"52014\",\r\n                    \"value_name\": \"Verde\",\r\n                    \"values\": [\r\n                        {\r\n                            \"id\": \"52014\",\r\n                            \"name\": \"Verde\",\r\n                            \"struct\": null\r\n                        }\r\n                    ],\r\n                    \"value_type\": \"string\"\r\n                },\r\n                {\r\n                    \"id\": \"SIZE\",\r\n                    \"name\": \"Tamanho\",\r\n                    \"value_id\": \"2948867\",\r\n                    \"value_name\": \"38\",\r\n                    \"values\": [\r\n                        {\r\n                            \"id\": \"2948867\",\r\n                            \"name\": \"38\",\r\n                            \"struct\": null\r\n                        }\r\n                    ],\r\n                    \"value_type\": \"string\"\r\n                }\r\n            ],\r\n            \"available_quantity\": 10,\r\n            \"sold_quantity\": 0,\r\n            \"sale_terms\": [],\r\n            \"picture_ids\": [\r\n                \"776998-MLB83228294265_032025\",\r\n                \"609699-MLB83228104469_032025\",\r\n                \"604495-MLB83228523533_032025\"\r\n            ],\r\n            \"attributes\": [\r\n                {\r\n                    \"id\": \"SIZE_GRID_ROW_ID\",\r\n                    \"value_name\": \"2948867:1\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"price\": 100,\r\n            \"attribute_combinations\": [\r\n                {\r\n                    \"id\": \"COLOR\",\r\n                    \"name\": \"Cor\",\r\n                    \"value_id\": \"2450312\",\r\n                    \"value_name\": \"Rosa\",\r\n                    \"values\": [\r\n                        {\r\n                            \"id\": \"2450312\",\r\n                            \"name\": \"Rosa\",\r\n                            \"struct\": null\r\n                        }\r\n                    ],\r\n                    \"value_type\": \"string\"\r\n                },\r\n                {\r\n                    \"id\": \"SIZE\",\r\n                    \"name\": \"Tamanho\",\r\n                    \"value_id\": \"2948867\",\r\n                    \"value_name\": \"38\",\r\n                    \"values\": [\r\n                        {\r\n                            \"id\": \"2948867\",\r\n                            \"name\": \"38\",\r\n                            \"struct\": null\r\n                        }\r\n                    ],\r\n                    \"value_type\": \"string\"\r\n                }\r\n            ],\r\n            \"available_quantity\": 10,\r\n            \"sold_quantity\": 0,\r\n            \"sale_terms\": [],\r\n            \"picture_ids\": [\r\n                \"999500-MLB82939964964_032025\",\r\n                \"952794-MLB83228523569_032025\",\r\n                \"635246-MLB82939905470_032025\"\r\n            ],\r\n            \"attributes\": [\r\n                {\r\n                    \"id\": \"SIZE_GRID_ROW_ID\",\r\n                    \"value_name\": \"2948867:1\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"price\": 100,\r\n            \"attribute_combinations\": [\r\n                {\r\n                    \"id\": \"COLOR\",\r\n                    \"name\": \"Cor\",\r\n                    \"value_id\": \"2450308\",\r\n                    \"value_name\": \"Branco\",\r\n                    \"values\": [\r\n                        {\r\n                            \"id\": \"2450308\",\r\n                            \"name\": \"Branco\",\r\n                            \"struct\": null\r\n                        }\r\n                    ],\r\n                    \"value_type\": \"string\"\r\n                },\r\n                {\r\n                    \"id\": \"SIZE\",\r\n                    \"name\": \"Tamanho\",\r\n                    \"value_id\": \"2948867\",\r\n                    \"value_name\": \"38\",\r\n                    \"values\": [\r\n                        {\r\n                            \"id\": \"2948867\",\r\n                            \"name\": \"38\",\r\n                            \"struct\": null\r\n                        }\r\n                    ],\r\n                    \"value_type\": \"string\"\r\n                }\r\n            ],\r\n            \"available_quantity\": 10,\r\n            \"sold_quantity\": 0,\r\n            \"sale_terms\": [],\r\n            \"picture_ids\": [\r\n                \"909974-MLB83228294357_032025\",\r\n                \"693517-MLB82939895484_032025\",\r\n                \"960536-MLB83228493945_032025\"\r\n            ],\r\n            \"attributes\": [\r\n                {\r\n                    \"id\": \"SIZE_GRID_ROW_ID\",\r\n                    \"value_name\": \"2948867:1\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"price\": 100,\r\n            \"attribute_combinations\": [\r\n                {\r\n                    \"id\": \"COLOR\",\r\n                    \"name\": \"Cor\",\r\n                    \"value_id\": \"52049\",\r\n                    \"value_name\": \"Preto\",\r\n                    \"values\": [\r\n                        {\r\n                            \"id\": \"52049\",\r\n                            \"name\": \"Preto\",\r\n                            \"struct\": null\r\n                        }\r\n                    ],\r\n                    \"value_type\": \"string\"\r\n                },\r\n                {\r\n                    \"id\": \"SIZE\",\r\n                    \"name\": \"Tamanho\",\r\n                    \"value_id\": \"2948867\",\r\n                    \"value_name\": \"38\",\r\n                    \"values\": [\r\n                        {\r\n                            \"id\": \"2948867\",\r\n                            \"name\": \"38\",\r\n                            \"struct\": null\r\n                        }\r\n                    ],\r\n                    \"value_type\": \"string\"\r\n                }\r\n            ],\r\n            \"available_quantity\": 10,\r\n            \"sold_quantity\": 0,\r\n            \"sale_terms\": [],\r\n            \"picture_ids\": [\r\n                \"600119-MLB83228324415_032025\",\r\n                \"930978-MLB82939925306_032025\",\r\n                \"782887-MLB83228493989_032025\"\r\n            ],\r\n            \"attributes\": [\r\n                {\r\n                    \"id\": \"SIZE_GRID_ROW_ID\",\r\n                    \"value_name\": \"2948867:1\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"warranty\": \"Garantia do vendedor: 30 dias\",\r\n    \"catalog_product_id\": null,\r\n    \"domain_id\": \"MLB-T_SHIRTS\",\r\n    \"seller_custom_field\": null,\r\n    \"automatic_relist\": false,\r\n    \"catalog_listing\": false,\r\n    \"channels\": [\r\n        \"marketplace\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.mercadolibre.com/items",
+							"protocol": "https",
+							"host": [
+								"api",
+								"mercadolibre",
+								"com"
+							],
+							"path": [
+								"items"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tabela de Medidas",
+			"item": [
+				{
+					"name": "Create Tabela de Medidas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "APP_USR-4938054066138304-032109-449b46d1bd86671ccfd216d4008fb87d-2154158171",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"names\": {\r\n        \"MLB\": \"Medidas Camisetas - teste\"\r\n    },\r\n    \"domain_id\": \"T_SHIRTS\",\r\n    \"site_id\": \"MLB\",\r\n    \"type\": \"SPECIFIC\",\r\n    \"seller_id\": 2154158171,\r\n    \"measure_type\": \"CLOTHING_MEASURE\",\r\n    \"main_attribute_id\": \"SIZE\",\r\n    \"attributes\": [\r\n        {\r\n            \"id\": \"GENDER\",\r\n            \"name\": \"Gênero\",\r\n            \"values\": [\r\n                {\r\n                    \"id\": \"110461\",\r\n                    \"name\": \"Sem gênero\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"rows\": [\r\n        {\r\n            \"id\": \"2948867:2\",\r\n            \"attributes\": [\r\n                {\r\n                    \"id\": \"SIZE\",\r\n                    \"name\": \"Tamanho\",\r\n                    \"label\": \"Tamanho na etiqueta\",\r\n                    \"values\": [\r\n                        {\r\n                            \"name\": \"50\"\r\n                        }\r\n                    ]\r\n                },\r\n                {\r\n                    \"id\": \"FILTRABLE_SIZE\",\r\n                    \"name\": \"Equivalências\",\r\n                    \"label\": \"Equivalências\",\r\n                    \"values\": [\r\n                        {\r\n                            \"id\": \"13853813\",\r\n                            \"name\": \"P\"\r\n                        }\r\n                    ]\r\n                },\r\n                {\r\n                    \"id\": \"GARMENT_CHEST_WIDTH_FROM\",\r\n                    \"name\": \"Largura do peito da roupa de\",\r\n                    \"label\": \"Largura do peito da roupa\",\r\n                    \"values\": [\r\n                        {\r\n                            \"name\": \"20 cm\",\r\n                            \"struct\": {\r\n                                \"number\": 20.0,\r\n                                \"unit\": \"cm\"\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            ],\r\n            \"validate_row\": true\r\n        },\r\n        {\r\n            \"id\": \"2948867:1\",\r\n            \"attributes\": [\r\n                {\r\n                    \"id\": \"SIZE\",\r\n                    \"name\": \"Tamanho\",\r\n                    \"label\": \"Tamanho na etiqueta\",\r\n                    \"values\": [\r\n                        {\r\n                            \"name\": \"38\"\r\n                        }\r\n                    ]\r\n                },\r\n                {\r\n                    \"id\": \"FILTRABLE_SIZE\",\r\n                    \"name\": \"Equivalências\",\r\n                    \"label\": \"Equivalências\",\r\n                    \"values\": [\r\n                        {\r\n                            \"id\": \"13853814\",\r\n                            \"name\": \"G\"\r\n                        }\r\n                    ]\r\n                },\r\n                {\r\n                    \"id\": \"GARMENT_CHEST_WIDTH_FROM\",\r\n                    \"name\": \"Largura do peito da roupa de\",\r\n                    \"label\": \"Largura do peito da roupa\",\r\n                    \"values\": [\r\n                        {\r\n                            \"name\": \"59 cm\",\r\n                            \"struct\": {\r\n                                \"number\": 59.0,\r\n                                \"unit\": \"cm\"\r\n                            }\r\n                        }\r\n                    ]\r\n                },\r\n                {\r\n                    \"id\": \"GARMENT_LENGTH_FROM\",\r\n                    \"name\": \"Comprimento da roupa de\",\r\n                    \"label\": \"Comprimento da roupa\",\r\n                    \"values\": [\r\n                        {\r\n                            \"name\": \"67 cm\",\r\n                            \"struct\": {\r\n                                \"number\": 67.0,\r\n                                \"unit\": \"cm\"\r\n                            }\r\n                        }\r\n                    ]\r\n                },\r\n                {\r\n                    \"id\": \"GARMENT_SHOULDER_WIDTH_FROM\",\r\n                    \"name\": \"Largura dos ombros da roupa de\",\r\n                    \"label\": \"Largura dos ombros da roupa\",\r\n                    \"values\": [\r\n                        {\r\n                            \"name\": \"41 cm\",\r\n                            \"struct\": {\r\n                                \"number\": 41.0,\r\n                                \"unit\": \"cm\"\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            ],\r\n            \"validate_row\": true\r\n        }\r\n    ],\r\n    \"template_id\": \"SITE:MLB-DOMAIN:T_SHIRTS-GENDER:Sem gênero-MEASURE_TYPE:CLOTHING_MEASURE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.mercadolibre.com/catalog/charts",
+							"protocol": "https",
+							"host": [
+								"api",
+								"mercadolibre",
+								"com"
+							],
+							"path": [
+								"catalog",
+								"charts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Tabela de Medidas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "APP_USR-4938054066138304-031909-b8e0096d00046b22e3deba2b19381708-2154158171",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.mercadolibre.com/catalog/charts/search?offset=1&limit=100",
+							"protocol": "https",
+							"host": [
+								"api",
+								"mercadolibre",
+								"com"
+							],
+							"path": [
+								"catalog",
+								"charts",
+								"search"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tabela de Medida por Marca",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "APP_USR-1528463660779438-030713-0d8648e778bf5b04b23a57555f3ea588-2154158171",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"site_id\": \"MLB\",      \r\n      \"type\": \"BRAND\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.mercadolibre.com/catalog/charts/domains/search",
+							"protocol": "https",
+							"host": [
+								"api",
+								"mercadolibre",
+								"com"
+							],
+							"path": [
+								"catalog",
+								"charts",
+								"domains",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Tabela de Medidas - Por Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "APP_USR-4938054066138304-032109-449b46d1bd86671ccfd216d4008fb87d-2154158171",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.mercadolibre.com/catalog/charts/2948867",
+							"protocol": "https",
+							"host": [
+								"api",
+								"mercadolibre",
+								"com"
+							],
+							"path": [
+								"catalog",
+								"charts",
+								"2948867"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categorias",
+			"item": [
+				{
+					"name": "Preditor Categorias",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "APP_USR-1528463660779438-030713-0d8648e778bf5b04b23a57555f3ea588-2154158171",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.mercadolibre.com/sites/MLB/domain_discovery/search?q=camisa",
+							"protocol": "https",
+							"host": [
+								"api",
+								"mercadolibre",
+								"com"
+							],
+							"path": [
+								"sites",
+								"MLB",
+								"domain_discovery",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "camisa"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Medidas por Categoria (dominio)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "APP_USR-1528463660779438-030713-0d8648e778bf5b04b23a57555f3ea588-2154158171",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.mercadolibre.com/catalog/charts/MLB/configurations/active_domains",
+							"protocol": "https",
+							"host": [
+								"api",
+								"mercadolibre",
+								"com"
+							],
+							"path": [
+								"catalog",
+								"charts",
+								"MLB",
+								"configurations",
+								"active_domains"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ficha Tecnica Dominio",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "APP_USR-1528463660779438-030713-0d8648e778bf5b04b23a57555f3ea588-2154158171",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.mercadolibre.com/domains/MLB-T_SHIRTS/technical_specs",
+							"protocol": "https",
+							"host": [
+								"api",
+								"mercadolibre",
+								"com"
+							],
+							"path": [
+								"domains",
+								"MLB-T_SHIRTS",
+								"technical_specs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atributos Categoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.mercadolibre.com/categories/MLB3937/attributes/SIZE",
+							"protocol": "https",
+							"host": [
+								"api",
+								"mercadolibre",
+								"com"
+							],
+							"path": [
+								"categories",
+								"MLB3937",
+								"attributes",
+								"SIZE"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get Access Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "content-type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"grant_type\": \"authorization_code\",\r\n    \"client_id\": \"4938054066138304\",\r\n    \"client_secret\": \"ttXcPVEM1P8LseYXLNDCDhC5X6K3FtLc\",\r\n    \"code\": \"TG-67d30dab60ecdb0001ca3ce9-2154158171\",\r\n    \"redirect_uri\": \"https://virtuasms.com.br\",\r\n    \"code_verifier\": \"$CODE_VERIFIER\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.mercadolibre.com/oauth/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mercadolibre",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Access Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"grant_type\": \"refresh_token\",\r\n    \"client_id\": \"4938054066138304\",\r\n    \"client_secret\": \"ttXcPVEM1P8LseYXLNDCDhC5X6K3FtLc\",\r\n    \"refresh_token\": \"TG-67d30db768033400010f4bf7-2154158171\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.mercadolibre.com/oauth/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mercadolibre",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User Test",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "APP_USR-1528463660779438-030713-0d8648e778bf5b04b23a57555f3ea588-2154158171",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \t\"site_id\":\"MLB\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.mercadolibre.com/users/test_user",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mercadolibre",
+						"com"
+					],
+					"path": [
+						"users",
+						"test_user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Categories",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "APP_USR-4938054066138304-031909-b8e0096d00046b22e3deba2b19381708-2154158171",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.mercadolibre.com/categories/MLB31447",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mercadolibre",
+						"com"
+					],
+					"path": [
+						"categories",
+						"MLB31447"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Sub Categories",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "APP_USR-4938054066138304-031909-b8e0096d00046b22e3deba2b19381708-2154158171",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.mercadolibre.com/sites/MLB/categories",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mercadolibre",
+						"com"
+					],
+					"path": [
+						"sites",
+						"MLB",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Tipos de Anuncios",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "APP_USR-1528463660779438-030713-0d8648e778bf5b04b23a57555f3ea588-2154158171",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.mercadolibre.com/sites/MLB/listing_types",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mercadolibre",
+						"com"
+					],
+					"path": [
+						"sites",
+						"MLB",
+						"listing_types"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Generos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "APP_USR-1528463660779438-030713-0d8648e778bf5b04b23a57555f3ea588-2154158171",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.mercadolibre.com/catalog_domains/MLB3112/attributes/GENDER",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mercadolibre",
+						"com"
+					],
+					"path": [
+						"catalog_domains",
+						"MLB3112",
+						"attributes",
+						"GENDER"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Condicoes Item",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "APP_USR-1528463660779438-030713-0d8648e778bf5b04b23a57555f3ea588-2154158171",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.mercadolibre.com/categories/MLB107292/attributes",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mercadolibre",
+						"com"
+					],
+					"path": [
+						"categories",
+						"MLB107292",
+						"attributes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Itens por Vendedor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{ACCESS_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.mercadolibre.com/sites/MLB/search?seller_id=154455762",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mercadolibre",
+						"com"
+					],
+					"path": [
+						"sites",
+						"MLB",
+						"search"
+					],
+					"query": [
+						{
+							"key": "seller_id",
+							"value": "154455762"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Imagens",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "APP_USR-4938054066138304-031909-b8e0096d00046b22e3deba2b19381708-2154158171",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/filip/Downloads/camisetasml/amarelo_1.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.mercadolibre.com/pictures/items/upload",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mercadolibre",
+						"com"
+					],
+					"path": [
+						"pictures",
+						"items",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "ACCESS_TOKEN",
+			"value": "APP_USR-4938054066138304-031312-6f063e9947527d6e76812ef374ce01fd-2154158171",
+			"type": "string"
+		}
+	]
+}

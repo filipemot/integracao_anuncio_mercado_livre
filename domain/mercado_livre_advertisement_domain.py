@@ -7,7 +7,7 @@ class MercadoLivreAdvertisementDomain:
 
     def __init__(self, title: str, category_id: str, price: float, available_quantity: int, warranty: str,
                  domain: str, grid_id: str, variations: [VariationsDomain], site_id: str, currency_id: str,
-                 descriptions: [str], mercado_livre_services: MercadoLivreServices):
+                 descriptions: str, mercado_livre_services: MercadoLivreServices):
         self.site_id = site_id
         self.title = title
         self.family_name: None
@@ -408,7 +408,6 @@ class MercadoLivreAdvertisementDomain:
             "title": self.title,
             "family_name": None,
             "category_id": self.category_id,
-            "user_product_id": None,
             "official_store_id": self.official_store_id,
             "price": self.price,
             "currency_id": self.currency_id,
@@ -426,5 +425,4 @@ class MercadoLivreAdvertisementDomain:
             "automatic_relist": self.automatic_relist,
             "catalog_listing": self.catalog_listing,
             "channels": self.channels,
-            "descriptions": self.descriptions
         }

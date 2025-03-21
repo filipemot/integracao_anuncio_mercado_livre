@@ -21,7 +21,7 @@ def main():
                                                                          variations,
                                                                          config_services.mercado_livre_api_site_id,
                                                                          config_services.mercado_livre_api_currency,
-                                                                         ["Descrição"],
+                                                                         "Descrição",
                                                                          mercado_livre_services)
     result = mercado_livre_services.save_advertisement(mercado_livre_advertisement_domain)
 
@@ -37,7 +37,7 @@ def add_variation_yellow():
                 PicturesDomain("C:\\Users\\filip\\Downloads\\camisetasml\\amarelo_3.png", "amarelo_3.png")]
 
     return VariationsDomain(config_services.mercado_livre_api_site_id, "Amarelo", "52007",
-                            100.0, "Unico", config_services.mercado_livre_api_grid_id, pictures)
+                            100.0, "38", config_services.mercado_livre_api_grid_id, pictures)
 
 
 def add_variation_green():
@@ -46,7 +46,7 @@ def add_variation_green():
                 PicturesDomain("C:\\Users\\filip\\Downloads\\camisetasml\\verde_3.png", "verde_3.png")]
 
     return VariationsDomain(config_services.mercado_livre_api_site_id, "Verde", "52014",
-                            100.0, "Unico", config_services.mercado_livre_api_grid_id, pictures)
+                            100.0, "38", config_services.mercado_livre_api_grid_id, pictures)
 
 
 def add_variation_pink():
@@ -55,7 +55,7 @@ def add_variation_pink():
                 PicturesDomain("C:\\Users\\filip\\Downloads\\camisetasml\\rosa_3.png", "rosa_3.png")]
 
     return VariationsDomain(config_services.mercado_livre_api_site_id, "Rosa", "2450312",
-                            100.0, "Unico", config_services.mercado_livre_api_grid_id, pictures)
+                            100.0, "38", config_services.mercado_livre_api_grid_id, pictures)
 
 
 def add_variation_white():
@@ -63,8 +63,8 @@ def add_variation_white():
                 PicturesDomain("C:\\Users\\filip\\Downloads\\camisetasml\\branco_2.png", "branco_2.png"),
                 PicturesDomain("C:\\Users\\filip\\Downloads\\camisetasml\\branco_3.png", "branco_3.png")]
 
-    return VariationsDomain(config_services.mercado_livre_api_site_id, "Rosa", "2450308",
-                            100.0, "Unico", config_services.mercado_livre_api_grid_id, pictures)
+    return VariationsDomain(config_services.mercado_livre_api_site_id, "Branco", "2450308",
+                            100.0, "38", config_services.mercado_livre_api_grid_id, pictures)
 
 
 def add_variation_black():
@@ -73,7 +73,7 @@ def add_variation_black():
                 PicturesDomain("C:\\Users\\filip\\Downloads\\camisetasml\\preto_3.png", "preto_3.png")]
 
     return VariationsDomain(config_services.mercado_livre_api_site_id, "Preto", "52049",
-                            100.0, "Unico", config_services.mercado_livre_api_grid_id, pictures)
+                            100.0, "38", config_services.mercado_livre_api_grid_id, pictures)
 
 
 if __name__ == '__main__':
